@@ -17,6 +17,11 @@ export default function Home() {
       body: JSON.stringify({ url }),
     });
     const data = await response.json();
+    if (!response.ok) {
+      alert(data.error ?? "Failed to shorten URL");
+      return;
+    }
+
     setShortenedUrl(`${window.location.origin}/${data.id}`);
   };
 
