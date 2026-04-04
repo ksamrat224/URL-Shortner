@@ -8,6 +8,7 @@ export default function Home() {
   const handleUrlChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUrl(event.target.value);
   };
+  const shortenUrl = async () => {};
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black p-4">
@@ -19,13 +20,16 @@ export default function Home() {
         className="w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         placeholder="Enter your url"
       />
-      <button className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+      <button
+        onClick={shortenUrl}
+        className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+      >
         Shorten URL
       </button>
       <div>
         <h2 className="text-2xl font-bold text-center">Shortened URL</h2>
         <div className="flex items-center gap-4 p-4 bg-gray-500 rounded-lg">
-          <span className="text-lg font-mono">{url}</span>
+          <span className="text-lg font-mono">{shortenedUrl}</span>
         </div>
       </div>
     </div>
