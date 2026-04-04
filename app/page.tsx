@@ -17,7 +17,7 @@ export default function Home() {
       body: JSON.stringify({ url }),
     });
     const data = await response.json();
-    setShortenedUrl(data.id);
+    setShortenedUrl(`${window.location.origin}/${data.id}`);
   };
 
   return (
